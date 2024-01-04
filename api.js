@@ -6,8 +6,7 @@ export class ApiD {
         console.log('%c' + siteName + ' | Inizializzazione Sito Web | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         this.startProtection(siteName); 
         var siteIdString = siteId.toString();
-        var siteListName = siteList[siteIdString];
-        window[siteListName + '_build']();
+        window[siteIdString + '_build']();
     }
     startProtection(siteName) {
         document.oncontextmenu = function() {return false;};
