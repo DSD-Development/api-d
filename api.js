@@ -1,5 +1,3 @@
-import { WebComponent } from "./content/WBContent.js";
-
 export class ApiD {
     init(siteName, siteId) {
         console.clear();
