@@ -1,4 +1,5 @@
 import { WebComponent } from "https://dsd-development.github.io/api-d/content/WBContent.js";
+const ApiDOkey = "ApiDKey-rufp-ebdk-3073";
 
 export class ApiD {
     constructor(apik, siteName, siteId) {
@@ -7,23 +8,16 @@ export class ApiD {
         this.siteId = siteId.toString();
         this.init();
     }
-    async init() {
+    init() {
         console.log('%c' + this.siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
-        try {
-            const url = 'https://apidkey.000webhostapp.com/key.txt';   
-            const response = await fetch(url);
-            const ApiDOkey = await response.text();
-            if (ApiDOkey.toString() == this.apik.toString() || ApiDOkey.toString().includes(this.apik.toString())) {
-                console.clear();
-                console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
-                this.init(siteName, siteId);
-            } else {
-                console.clear();
-                console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
-                this.blockWebSite();
-            }
-        } catch (error) {
-            console.error(error);
+        if (ApiDOkey.toString() == this.apik.toString() || ApiDOkey.toString().includes(this.apik.toString())) {
+            console.clear();
+            console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
+            this.init(siteName, siteId);
+        } else {
+            console.clear();
+            console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
+            this.blockWebSite();
         }
     }
     buildWebSite() {
