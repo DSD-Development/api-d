@@ -1,4 +1,4 @@
-import { WebComponent } from "https://dsd-development.github.io/api-d/content/WBContent.js";
+import { WebComponent } from "https://dsd-development.github.io/api-d/content/WBComponent.js";
 const ApiDOkey = "ApiDKey-rufp-ebdk-3073";
 
 export class ApiD {
