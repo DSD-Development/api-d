@@ -1,4 +1,4 @@
-class ApiD {
+export class ApiD {
     init(siteName, siteId) {
         console.clear();
         console.log('%c' + siteName + ' | Inizializzazione Sito Web | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
