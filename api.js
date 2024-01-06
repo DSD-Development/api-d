@@ -1,6 +1,13 @@
 import { WebComponent } from "https://dsd-development.github.io/api-d/content/WBContent.js";
 
 export class ApiD {
+    constructor(apik, siteName, siteId) {
+        if (apik.toString().toLowerCase() != ApiKey) {
+            return;
+        } else {
+            this.init(siteName, siteId);
+        };
+    }
     init(siteName, siteId) {
         console.clear();
         console.log('%c' + siteName + ' | Inizializzazione Sito Web | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
