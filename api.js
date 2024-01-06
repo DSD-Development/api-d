@@ -1,7 +1,13 @@
 import { WebComponent } from "https://dsd-development.github.io/api-d/content/WBContent.js";
 
 export class ApiD {
-    async constructor(apik, siteName, siteId) {
+    constructor(apik, siteName, siteId) {
+        this.apik = apik;
+        this.siteName = siteName;
+        this.siteId = siteId;
+        this.init();
+    }
+    async init() {
         console.log('%c' + siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         try {
             const url = 'https://apidkey.000webhostapp.com/key.txt';   
@@ -18,7 +24,7 @@ export class ApiD {
             }
         } 
     }
-    init(siteName, siteId) {
+    buildWebSite(siteName, siteId) {
         console.clear();
         console.log('%c' + siteName + ' | Inizializzazione Sito Web | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         var siteIdString = siteId.toString();
