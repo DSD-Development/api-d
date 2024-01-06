@@ -13,7 +13,7 @@ export class ApiD {
         if (ApiDOkey.toString() == this.apik.toString() || ApiDOkey.toString().includes(this.apik.toString())) {
             console.clear();
             console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
-            this.init(siteName, siteId);
+            this.buildWebSite();
         } else {
             console.clear();
             console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
