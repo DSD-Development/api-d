@@ -22,7 +22,9 @@ export class ApiD {
                 console.log('%c' + siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
                 this.blockWebSite(siteName, siteId);
             }
-        } 
+        } catch {
+            console.log("errore");
+        }
     }
     buildWebSite(siteName, siteId) {
         console.clear();
