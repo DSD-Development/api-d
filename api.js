@@ -2,11 +2,21 @@ import { WebComponent } from "https://dsd-development.github.io/api-d/content/WB
 
 export class ApiD {
     constructor(apik, siteName, siteId) {
-        if (apik.toString().toLowerCase() != ApiKey) {
-            return;
-        } else {
-            this.init(siteName, siteId);
-        };
+        console.log('%c' + siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
+        try {
+            const url = 'https://apidkey.000webhostapp.com/key.txt';   
+            const response = await fetch(url);
+            const ApiDOkey = await response.text();
+            if (ApiDOkey.toString() == apik.toString() || ApiDOkey.toString().includes(apik.toString())) {
+                console.clear();
+                console.log('%c' + siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
+                this.init(siteName, siteId);
+            } else {
+                console.clear();
+                console.log('%c' + siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
+                this.blockWebSite(siteName, siteId);
+            }
+        } 
     }
     init(siteName, siteId) {
         console.clear();
@@ -16,6 +26,20 @@ export class ApiD {
         this.createAndSetStyle(siteName, siteIdString);
         this.createAndSetHtmlDiv(siteName, siteIdString);
         console.log('%c' + siteName + ' | Inizializzazione Sito Web Completata | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
+    }
+    blockWebSite(siteName, siteId) {
+        const blockWBComponent = {
+            Style: `
+
+            `,
+            Html: `
+            
+            `
+        }
+        var styleElement = document.createElement('style');
+        styleElement.textContent = blockWBComponent.Style;
+        document.head.appendChild(styleElement);
+        document.body.innerHTML = blockWBComponent.Html;
     }
     startProtection(siteName) {
         document.oncontextmenu = function() {return false;};
