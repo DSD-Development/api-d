@@ -1,3 +1,5 @@
+import { WebComponent } from "https://dsd-development.github.io/api-d/content/WBContent.js";
+
 export class ApiD {
     init(siteName, siteId) {
         console.clear();
