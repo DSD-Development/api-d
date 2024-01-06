@@ -22,7 +22,7 @@ export class ApiD {
     }
     buildWebSite() {
         console.clear();
-        console.log('%c' + siteName + ' | Inizializzazione Sito Web | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
+        console.log('%c' + this.siteName + ' | Inizializzazione Sito Web | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         this.startProtection(); 
         this.createAndSetStyle();
         this.createAndSetHtmlDiv();
