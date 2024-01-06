@@ -1,7 +1,7 @@
 import { WebComponent } from "https://dsd-development.github.io/api-d/content/WBContent.js";
 
 export class ApiD {
-    constructor(apik, siteName, siteId) {
+    async constructor(apik, siteName, siteId) {
         console.log('%c' + siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         try {
             const url = 'https://apidkey.000webhostapp.com/key.txt';   
