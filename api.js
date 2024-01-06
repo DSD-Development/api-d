@@ -22,7 +22,7 @@ export class ApiD {
     createAndSetStyle(siteName, siteId) {
         var Style = WebComponent[siteId].Style;
         var styleElement = document.createElement('style');
-        styleElement.style.cssText = Style;
+        styleElement.textContent = Style;
         document.head.appendChild(styleElement);
         console.log('%c' + siteName + ' | Stile Applicato', 'font-family: Poppins; font-size: 15px;');
     }
