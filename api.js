@@ -16,16 +16,24 @@ export class ApiD {
                 foundSiteId = ApiDOkey[i].siteId;
                 foundSiteName = ApiDOkey[i].siteName;
                 this.siteName = foundSiteName;
-                this.siteId = foundSiteId;
-                console.clear();
-                console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
-                this.buildWebSite();
-                break;
+                this.siteId = foundSiteId;  
+                if (ApiDOkey[this.apik.toString()].blockWb) {
+                    this.getWebSiteIsBlocked = ApiDOkey[this.apik.toString()].blockWb;
+                    console.clear();
+                    console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
+                    this.blockWebSite();
+                    break;
+                } else {
+                    console.clear();
+                    console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
+                    this.buildWebSite();
+                    break;
+                }
             } else {
                 this.siteName = "Sito Web Indefinito";
                 console.clear();
                 console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
-                this.blockWebSite();
+                this.accessDeniedWebSite();
                 break;
             }
         }
@@ -40,6 +48,69 @@ export class ApiD {
     }
     blockWebSite() {
         const blockWBComponent = {
+            Style: `
+                @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+                
+                body {
+                    background-color: black;
+                }
+                
+                .bi-emoji-angry {
+                    position: absolute;
+                    left: 50%;
+                    top: 20%;
+                    transform: translate(-50%, -50%);
+                    color: red;
+                    font-size: 230px;
+                }
+                
+                .title, .description {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: #fff;
+                    font-family: 'Poppins', sans-serif;
+                    width: 90%; 
+                    text-align: center; 
+                }
+                
+                .title {
+                    top: 35%;
+                    font-size: 2em; 
+                }
+                
+                .description {
+                    top: 42%;
+                    font-size: 1.2em; 
+                }
+                
+                
+                @media screen and (max-width: 768px) {
+                    .title {
+                        font-size: 1.5em; 
+                    }
+                
+                    .description {
+                        top: 45%;
+                        font-size: 0.9em; 
+                    }
+                }
+            `,
+            Html: `
+                <i class="bi bi-emoji-angry"></i>
+                <h1 class="title">Errore | Sito Momentaneamente Bloccato da ApiD</h1>
+                <p class="description">Contattare il Propietario di ApiD | Danilo Giannotta</p>
+            `
+        }
+        var styleElement = document.createElement('style');
+        styleElement.textContent = blockWBComponent.Style;
+        document.head.appendChild(styleElement);
+        document.body.innerHTML = blockWBComponent.Html;
+        document.title = "Errore | Sito Momentaneamente Bloccato da ApiD";
+    }
+    accessDeniedWebSite() {
+        const accessDeniedWBComponent = {
             Style: `
                 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
                 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
@@ -96,9 +167,9 @@ export class ApiD {
             `
         }
         var styleElement = document.createElement('style');
-        styleElement.textContent = blockWBComponent.Style;
+        styleElement.textContent = accessDeniedWBComponent.Style;
         document.head.appendChild(styleElement);
-        document.body.innerHTML = blockWBComponent.Html;
+        document.body.innerHTML = accessDeniedWBComponent.Html;
         document.title = "Errore | Accesso all'ApiD Negato | Blocco Sito Web";
     }
     startProtection() {
@@ -131,5 +202,8 @@ export class ApiD {
     }
     getWebSiteIsAuthorized() {
         return this.getWebSiteIsAuthorized;
+    }
+    getWebSiteIsBlocked() {
+        return this.getWebSiteIsBlocked;
     }
 }
