@@ -260,7 +260,7 @@ export const WebComponent = {
                         <br>
                         <li class="nav-item">
                             <p class="nav-link text-white" href="#">
-                                ${document.write("© Copyright " + new Date().getFullYear() + " | Danilo Giannotta")}
+                                ${"© Copyright " + new Date().getFullYear() + " | Danilo Giannotta"}
                             </p>
                         </li>
                     </ul>
@@ -275,6 +275,85 @@ export const WebComponent = {
                     </div>
                     <div class="toast-body text-white" id="notificationText"></div>
                 </div>
+            </div>
+        `
+    },
+    "00002": {
+        // Compito Religione
+        Style: `
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+            body {
+                background: linear-gradient(to left, rgb(255, 128, 255), rgb(73, 73, 254));
+            }
+            
+            .title {
+                color: #fff;
+                font-weight: 700;
+            }
+            
+            .title span {
+                font-size: 18px;
+            }
+            
+            
+            .btnstyle {
+                border-radius: 10px;
+                border: 3px solid white;
+                color: #fff;
+                font-weight: 700;
+                padding: 5px 40px;
+            }
+            
+            .btnstyle1 {background-color: rgb(0, 203, 203);}
+            .btnstyle2 {background-color: rgb(0, 221, 125);}
+            .btnstyle3 {background-color: rgb(183, 0, 203);}
+            .btnstyle4 {background-color: rgb(162, 203, 0);} 
+            .btnstyle5 {background-color: rgb(0, 85, 203);}
+            .btnstyle6 {background-color: rgb(203, 0, 162);}
+            .btnstyle7 {background-color: rgb(203, 0, 78);}
+            .btnstyle8 {background-color: rgb(203, 196, 0);}
+            .btnstyle9 {background-color: rgb(203, 129, 0);}
+            .btnstyle10 {background-color: rgb(125, 0, 203);}
+            .btnstyle11 {background-color: rgb(225, 14, 14);}
+            .btnstyle12 {background-color: rgb(48, 144, 240);}
+            .btnstyle13 {background-color: rgb(255, 128, 0);}
+            .btnstyle14 {background-color: rgb(0, 255, 55);}
+            .btnstyle15 {background-color: rgb(217, 255, 0);}
+            
+            #textfrase {
+                color: #fff;
+                font-weight: 700;
+                font-family: "Poppins", sans-serif;
+                font-size: 25px;
+            }
+        `,
+        Html: `
+            <div class="container-fluid">
+                <h1 class="text-center m-5 title">Compito Religione | <span>Creato da Danilo, Lavinia e Donia</span></h1>
+                <div class="container text-center" style="margin-top: 70px;">
+                    <button class="btnstyle btnstyle1" id="button1">Successo</button>
+                    <button class="btnstyle btnstyle2" id="button2">Fallimento</button>
+                    <button class="btnstyle btnstyle3" id="button3">Meraviglioso</button>
+                    <button class="btnstyle btnstyle4" id="button4">Piccole Cose</button>
+                    <button class="btnstyle btnstyle5" id="button5">Buio</button>
+                    <button class="btnstyle btnstyle6" id="button6">Tempo</button>
+                    <button class="btnstyle btnstyle7" id="button7">Per Sempre</button>
+                    <button class="btnstyle btnstyle8" id="button8">Sogni</button>
+                </div>
+                <div class="container text-center" style="margin-top: 10px;">
+                    <button class="btnstyle btnstyle9" id="button9">Soli</button>
+                    <button class="btnstyle btnstyle10" id="button10">Chiedere Aiuto</button>
+                    <button class="btnstyle btnstyle11" id="button11">Coraggio</button>
+                    <button class="btnstyle btnstyle12" id="button12">Paura</button>
+                    <button class="btnstyle btnstyle13" id="button13">Umiltà</button>
+                    <button class="btnstyle btnstyle14" id="button14">Sorridere nei Guai</button>
+                    <button class="btnstyle btnstyle15" id="button15">Protagonisti</button>
+                </div>        
+            </div>
+
+            <div class="container" style="margin-top: 100px;">
+                <p class="text-center" id="textfrase"></p>
             </div>
         `
     }
