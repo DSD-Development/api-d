@@ -17,8 +17,8 @@ export class ApiD {
                 foundSiteName = ApiDOkey[i].siteName;
                 this.siteName = foundSiteName;
                 this.siteId = foundSiteId;  
-                if (ApiDOkey[this.apik.toString()].blockWb) {
-                    this.getWebSiteIsBlocked = ApiDOkey[this.apik.toString()].blockWb;
+                this.getWebSiteIsBlocked = ApiDOkey[i].blockWb;
+                if (ApiDOkey[i].blockWb) {
                     console.clear();
                     console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
                     this.blockWebSite();
