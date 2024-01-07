@@ -32,7 +32,7 @@ export class ApiD {
             } else {
                 this.siteName = "Sito Web Indefinito";
                 console.clear();
-                console.log(this.getWebSiteIsAuthorized, ApiDOkey[i].key, this.apik.toStrint());
+                console.log(this.getWebSiteIsAuthorized, ApiDOkey[i].key, this.apik.toString());
                 console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
                 this.accessDeniedWebSite();
                 break;
