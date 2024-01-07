@@ -9,6 +9,6 @@ export const ApiDOkey = [
         key: "ApiDKey-ghdl-owbc-1659",
         siteName: "Compito Religione",
         siteId: "00002",
-        blockWb: true
+        blockWb: false
     }
 ];
