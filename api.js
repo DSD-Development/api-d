@@ -67,12 +67,12 @@ export class ApiD {
                 }
                 
                 .title {
-                    top: 33%;
+                    top: 35%;
                     font-size: 2em; 
                 }
                 
                 .description {
-                    top: 40%;
+                    top: 42%;
                     font-size: 1.2em; 
                 }
                 
@@ -83,14 +83,13 @@ export class ApiD {
                     }
                 
                     .description {
-                        top: 43%;
+                        top: 45%;
                         font-size: 0.9em; 
                     }
                 }
             `,
             Html: `
                 <i class="bi bi-cone-striped"></i>
-                <br>
                 <h1 class="title">Errore | Accesso all'ApiD Negato | Blocco Sito Web</h1>
                 <p class="description">Contattare il Propietario di ApiD | Danilo Giannotta</p>
             `
