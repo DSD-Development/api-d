@@ -17,8 +17,8 @@ export class ApiD {
                 foundSiteName = ApiDOkey[i].siteName;
                 this.siteName = foundSiteName;
                 this.siteId = foundSiteId;  
-                this.getWebSiteIsBlocked = ApiDOkey[i].blockWb;
-                if (ApiDOkey[i].blockWb) {
+                if (ApiDOkey[this.apik.toString()].blockWb) {
+                    this.getWebSiteIsBlocked = ApiDOkey[this.apik.toString()].blockWb;
                     console.clear();
                     console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
                     this.blockWebSite();
@@ -76,12 +76,12 @@ export class ApiD {
                 }
                 
                 .title {
-                    top: 35%;
+                    top: 37%;
                     font-size: 2em; 
                 }
                 
                 .description {
-                    top: 42%;
+                    top: 44%;
                     font-size: 1.2em; 
                 }
                 
@@ -92,7 +92,7 @@ export class ApiD {
                     }
                 
                     .description {
-                        top: 45%;
+                        top: 47%;
                         font-size: 0.9em; 
                     }
                 }
@@ -139,12 +139,12 @@ export class ApiD {
                 }
                 
                 .title {
-                    top: 35%;
+                    top: 37%;
                     font-size: 2em; 
                 }
                 
                 .description {
-                    top: 42%;
+                    top: 44%;
                     font-size: 1.2em; 
                 }
                 
@@ -155,7 +155,7 @@ export class ApiD {
                     }
                 
                     .description {
-                        top: 45%;
+                        top: 47%;
                         font-size: 0.9em; 
                     }
                 }
