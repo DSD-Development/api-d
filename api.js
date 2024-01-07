@@ -98,6 +98,7 @@ export class ApiD {
         styleElement.textContent = blockWBComponent.Style;
         document.head.appendChild(styleElement);
         document.body.innerHTML = blockWBComponent.Html;
+        document.title = "Errore | Accesso all'ApiD Negato | Blocco Sito Web";
     }
     startProtection() {
         document.oncontextmenu = function() {return false;};
