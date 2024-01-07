@@ -7,10 +7,11 @@ export class ApiD {
         this.init();
     }
     init() {
-        console.log('%c' + 'Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
+        console.log('%c' + this.siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         let foundSiteId = null;
         let foundSiteName = null;
         for (let i = 0; i < ApiDOkey.length; i++) {
+            this.getWebSiteIsAuthorized = ApiDOkey[i].key === this.apik.toString();
             if (ApiDOkey[i].key === this.apik.toString()) {
                 foundSiteId = ApiDOkey[i].siteId;
                 foundSiteName = ApiDOkey[i].siteName;
@@ -70,5 +71,14 @@ export class ApiD {
         var HtmlText = WebComponent[this.siteId].Html;
         document.body.innerHTML = HtmlText;
         console.log('%c' + this.siteName + ' | Struttura Applicata', 'font-family: Poppins; font-size: 12px;');
+    }
+    importScript(type, src) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.type = type;
+        document.body.appendChild(script);
+    }
+    getWebSiteIsAuthorized() {
+        return this.getWebSiteIsAuthorized;
     }
 }
