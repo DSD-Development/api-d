@@ -120,10 +120,11 @@ export class ApiD {
         document.body.innerHTML = HtmlText;
         console.log('%c' + this.siteName + ' | Struttura Applicata', 'font-family: Poppins; font-size: 12px;');
     }
-    importScript(type, src) {
+    importScript(type, crossOR, src) {
         const script = document.createElement('script');
         script.src = src;
         script.type = type;
+        if (crossOR != "") {script.crossOrigin = crossOR;}
         document.body.appendChild(script);
     }
     getWebSiteIsAuthorized() {
