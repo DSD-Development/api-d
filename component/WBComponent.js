@@ -260,7 +260,7 @@ export const WebComponent = {
                         <br>
                         <li class="nav-item">
                             <p class="nav-link text-white" href="#">
-                                <script>document.write("© Copyright " + new Date().getFullYear() + " | Danilo Giannotta")</script>
+                                ${document.write("© Copyright " + new Date().getFullYear() + " | Danilo Giannotta")}
                             </p>
                         </li>
                     </ul>
