@@ -7,7 +7,7 @@ export class ApiD {
         this.init();
     }
     init() {
-        console.log('%c' + this.siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
+        console.log('%c' + 'Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         let foundSiteId = null;
         let foundSiteName = null;
         for (let i = 0; i < ApiDOkey.length; i++) {
@@ -21,6 +21,7 @@ export class ApiD {
                 this.buildWebSite();
                 break;
             } else {
+                this.siteName = "Sito Web Indefinito";
                 console.clear();
                 console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
                 this.blockWebSite();
