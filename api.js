@@ -13,23 +13,21 @@ export class ApiD {
             this.siteName = info.siteName;
             this.siteId = info.siteId;  
             this.getWebSiteIsBlocked = info.blockWb;
+            this.getWebSiteIsAuthorized = info != null ? true : false;
             if (info.blockWb) {
                 console.clear();
                 console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
                 this.blockWebSite();
-                this.getWebSiteIsAuthorized = false;
             } else {
                 console.clear();
                 console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                 this.buildWebSite();
-                this.getWebSiteIsAuthorized = true;
             }
         } else {
             this.siteName = "Sito Web Indefinito";
             console.clear();
             console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
             this.accessDeniedWebSite();
-            this.getWebSiteIsAuthorized = false;
         }
     }
     buildWebSite() {
