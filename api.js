@@ -17,12 +17,10 @@ export class ApiD {
                 console.clear();
                 console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
                 this.blockWebSite();
-                break;
             } else {
                 console.clear();
                 console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                 this.buildWebSite();
-                break;
             }
         } else {
             this.siteName = "Sito Web Indefinito";
@@ -30,7 +28,6 @@ export class ApiD {
             console.log(this.getWebSiteIsAuthorized, ApiDOkey[i].key, ApiDOkey[i], ApiDOkey, this.apik.toString());
             console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
             this.accessDeniedWebSite();
-            break;
         }
     }
     buildWebSite() {
