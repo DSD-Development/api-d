@@ -8,7 +8,7 @@ export class ApiD {
     }
     init() {
         console.log('%c' + this.siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
-        const info = getInfoByKey(keyToSearch);
+        const info = this.getInfoByKey(keyToSearch);
         console.log(info);
         // let foundSiteId = null;
         // let foundSiteName = null;
