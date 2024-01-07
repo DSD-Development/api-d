@@ -8,36 +8,38 @@ export class ApiD {
     }
     init() {
         console.log('%c' + this.siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
-        let foundSiteId = null;
-        let foundSiteName = null;
-        for (let i = 0; i < ApiDOkey.length; i++) {
-            this.getWebSiteIsAuthorized = ApiDOkey[i].key === this.apik.toString();
-            if (ApiDOkey[i].key === this.apik.toString()) {
-                foundSiteId = ApiDOkey[i].siteId;
-                foundSiteName = ApiDOkey[i].siteName;
-                this.siteName = foundSiteName;
-                this.siteId = foundSiteId;  
-                this.getWebSiteIsBlocked = ApiDOkey[i].blockWb;
-                if (ApiDOkey[i].blockWb) {
-                    console.clear();
-                    console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
-                    this.blockWebSite();
-                    break;
-                } else {
-                    console.clear();
-                    console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
-                    this.buildWebSite();
-                    break;
-                }
-            } else {
-                this.siteName = "Sito Web Indefinito";
-                console.clear();
-                console.log(this.getWebSiteIsAuthorized, ApiDOkey[i].key, ApiDOkey[i], ApiDOkey, this.apik.toString());
-                console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
-                this.accessDeniedWebSite();
-                break;
-            }
-        }
+        const info = getInfoByKey(keyToSearch);
+        console.log(info);
+        // let foundSiteId = null;
+        // let foundSiteName = null;
+        // for (let i = 0; i < ApiDOkey.length; i++) {
+        //     this.getWebSiteIsAuthorized = ApiDOkey[i].key === this.apik.toString();
+        //     if (ApiDOkey[i].key === this.apik.toString()) {
+        //         foundSiteId = ApiDOkey[i].siteId;
+        //         foundSiteName = ApiDOkey[i].siteName;
+        //         this.siteName = foundSiteName;
+        //         this.siteId = foundSiteId;  
+        //         this.getWebSiteIsBlocked = ApiDOkey[i].blockWb;
+        //         if (ApiDOkey[i].blockWb) {
+        //             console.clear();
+        //             console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
+        //             this.blockWebSite();
+        //             break;
+        //         } else {
+        //             console.clear();
+        //             console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
+        //             this.buildWebSite();
+        //             break;
+        //         }
+        //     } else {
+        //         this.siteName = "Sito Web Indefinito";
+        //         console.clear();
+        //         console.log(this.getWebSiteIsAuthorized, ApiDOkey[i].key, ApiDOkey[i], ApiDOkey, this.apik.toString());
+        //         console.log('%c' + this.siteName + ' | Accesso all\'ApiD non Riuscito | Blocco Sito Web In Corso', 'font-family: Poppins; font-size: 20px; color: red;');
+        //         this.accessDeniedWebSite();
+        //         break;
+        //     }
+        // }
     }
     buildWebSite() {
         console.clear();
@@ -200,6 +202,10 @@ export class ApiD {
         script.type = type;
         if (crossOR != "") {script.crossOrigin = crossOR;}
         document.body.appendChild(script);
+    }
+    getInfoByKey(keyToFind) {
+        const foundKey = ApiDOkey.find(item => item.key === keyToFind);
+        return foundKey || null;
     }
     getWebSiteIsAuthorized() {
         return this.getWebSiteIsAuthorized;
