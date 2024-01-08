@@ -4,7 +4,7 @@ export const ApiDOkey = [
         siteName: "Sito Web Danilo",
         siteId: "00001",
         blockWb: false,
-        loadWbCheckUser: false,
+        loadWbCheckUser: true,
         notAuthorizedNation: false,
     },
     {
