@@ -16,7 +16,7 @@ export function WBcheckUser(siteName, siteId) {
                 padding: 10px;
                 box-sizing: border-box; 
                 position: absolute;
-                top: 50%; 
+                top: 53%; 
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
