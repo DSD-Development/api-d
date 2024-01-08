@@ -9,11 +9,11 @@ export class ApiD {
     init() {
         console.log('%c' + this.siteName + ' | Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         const info = this.getInfoByKey(this.apik.toString());
+        this.getWebSiteIsAuthorized = info != null ? true : false;
         if (info != null) {
             this.siteName = info.siteName;
             this.siteId = info.siteId;  
             this.getWebSiteIsBlocked = info.blockWb;
-            this.getWebSiteIsAuthorized = info != null ? true : false;
             if (info.blockWb) {
                 console.clear();
                 console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
