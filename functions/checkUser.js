@@ -27,7 +27,7 @@ export function WBcheckUser(siteName, siteId) {
                     max-width: none; 
                 }
                 .imgApiD {
-                    max-width: 280px;
+                    width: 280px;
                 }
             }
             
