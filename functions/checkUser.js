@@ -20,12 +20,6 @@ export function WBcheckUser(siteName, siteId) {
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-
-            .imgApiD {
-                max-width: 380px;
-                height: auto;
-                display: block;
-            }
             
             @media screen and (max-width: 600px) {
                 .chapta {
