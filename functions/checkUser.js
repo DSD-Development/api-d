@@ -1,4 +1,4 @@
-import { buildWebSite } from "https://dsd-development.github.io/api-d/functions/buildWebSite.js";
+import { buildWebSite } from "https://dsd-development.github.io/api-d/functions/buildSiteWeb.js";
 
 export function WBcheckUser(siteName, siteId) {
     const WBcheckUserComponent = {
