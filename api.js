@@ -24,7 +24,6 @@ export class ApiD {
                 console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
                 blockWebSite()
             } else {
-                console.log(info.notAuthorizedNation);
                 if (info.notAuthorizedNation === false) {
                     if (!info.loadWbCheckUser) {
                         console.clear();
@@ -37,9 +36,9 @@ export class ApiD {
                         WBcheckUser(this.siteName, this.siteId);
                     }
                 } else {
-                    console.log(await getNationIsAuthorized(info.notAuthorizedNation));
-                    if (await getNationIsAuthorized(info.notAuthorizedNation)) {
-                        // console.clear();
+                    var nationIsAuthorized = await getNationIsAuthorized(info.notAuthorizedNation);
+                    if (nationIsAuthorized) {
+                        console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                         buildWebSite(this.siteName, this.siteId);  
                         if (info.antiAFK) {antiAfk();};
