@@ -4,6 +4,7 @@ import { buildWebSite } from "https://dsd-development.github.io/api-d/functions/
 import { WBcheckUser } from "https://dsd-development.github.io/api-d/functions/checkUser.js";
 import { accessDeniedWebSite } from "https://dsd-development.github.io/api-d/functions/accessDenied.js";
 import { getNationIsAuthorized } from "https://dsd-development.github.io/api-d/protection/protection.js";
+import { antiAfk } from "https://dsd-development.github.io/api-d/protection/antiAfk.js";
 
 export class ApiD {
     constructor(apik) {
@@ -28,6 +29,12 @@ export class ApiD {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                         buildWebSite(this.siteName, this.siteId);
+                        if (info.antiAFK) {
+                            setInterval(() => {
+                                var antiAfkV = antiAfk();
+                                if (antiAfkV) {location.reload();}                                    
+                            }, 1000);
+                        }
                     } else {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Controllo Utente in Corso...', 'font-family: Poppins; font-size: 20px; color: white;');
@@ -37,7 +44,13 @@ export class ApiD {
                     if (getNationIsAuthorized(info.notAuthorizedNation)) {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
-                        buildWebSite(this.siteName);
+                        buildWebSite(this.siteName);  
+                        if (info.antiAFK) {
+                            setInterval(() => {
+                                var antiAfkV = antiAfk();
+                                if (antiAfkV) {location.reload();}                                
+                            }, 1000);
+                        }
                     } else {
                         window.close();
                     }

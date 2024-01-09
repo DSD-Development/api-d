@@ -5,6 +5,7 @@ export const ApiDOkey = [
         siteId: "00001",
         blockWb: false,
         loadWbCheckUser: true,
+        antiAFK: true,
         notAuthorizedNation: false,
     },
     {
@@ -12,7 +13,8 @@ export const ApiDOkey = [
         siteName: "Compito Religione",
         siteId: "00002",
         blockWb: false,
-        loadWbCheckUser: false,
+        loadWbCheckUser: true,
+        antiAFK: false,
         notAuthorizedNation: false,
     }
 ];
