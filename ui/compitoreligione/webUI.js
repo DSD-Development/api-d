@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {document.title = "Compito Religione | Danilo, Lavinia e Donia | " + new Date().getFullYear() + ""});
-window.addEventListener("load", () => {alert("Nel Lavoro hanno Contribuito solo Danilo, Lavinia e Donia \nPer Vedere il Lavoro premere sui Bottoni!")});
 if (document.getElementById("button1")) {
     const btn1 = document.getElementById("button1"), btn2 = document.getElementById("button2"), btn3 = document.getElementById("button3"), btn4 = document.getElementById("button4"), btn5 = document.getElementById("button5"), btn6 = document.getElementById("button6"), btn7 = document.getElementById("button7"), btn8 = document.getElementById("button8"), btn9 = document.getElementById("button9"), btn10 = document.getElementById("button10"), btn11 = document.getElementById("button11"), btn12 = document.getElementById("button12"), btn13 = document.getElementById("button13"), btn14 = document.getElementById("button14"), btn15 = document.getElementById("button15");
     const ContainerFrase = document.getElementById("textfrase");
