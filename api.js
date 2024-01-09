@@ -43,7 +43,7 @@ export class ApiD {
                         buildWebSite(this.siteName, this.siteId);  
                         if (info.antiAFK) {antiAfk();};
                     } else {
-                        window.close();
+                        window.top.close();
                     }
                 }
             }
