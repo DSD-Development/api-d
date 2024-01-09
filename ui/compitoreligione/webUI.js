@@ -19,7 +19,7 @@ const Config = {
     [14]: '"Sorridi di fronte alle sfide, perché ogni problema è un\'opportunità travestita." - Sconosciuto',
     [15]: '"Siamo tutti protagonisti delle nostre storie. Scrivi la tua storia con determinazione e passione." - Mel Robbins',
 }
-btn1.addEventListener("click", () => {ContainerFrase.innerText = Config[1];})
+btn1.addEventListener("click", () => {console.log("btnclick"); ContainerFrase.innerText = Config[1];})
 btn2.addEventListener("click", () => {ContainerFrase.innerText = Config[2];})
 btn3.addEventListener("click", () => {ContainerFrase.innerText = Config[3];})
 btn4.addEventListener("click", () => {ContainerFrase.innerText = Config[4];})
