@@ -9,7 +9,7 @@ import { antiAfk } from "https://dsd-development.github.io/api-d/protection/anti
 export class ApiD {
     constructor(apik) {
         this.apik = apik;
-        await this.init();
+        this.init();
     }
     async init() {
         console.log('%c' + 'Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
