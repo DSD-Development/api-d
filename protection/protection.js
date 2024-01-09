@@ -18,7 +18,7 @@ async function getUserCountry() {
                 try {
                     const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
                     const data = await response.json();
-                    const country = data.countryName;
+                    const country = data.countryName.toString().toLowerCase();
                     resolve(country);
                 } catch (error) {
                     reject(null);
