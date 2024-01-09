@@ -9,9 +9,9 @@ import { antiAfk } from "https://dsd-development.github.io/api-d/protection/anti
 export class ApiD {
     constructor(apik) {
         this.apik = apik;
-        this.init();
+        await this.init();
     }
-    init() {
+    async init() {
         console.log('%c' + 'Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         const info = this.getInfoByKey(this.apik.toString());
         this.getWebSiteIsAuthorized = info != null ? true : false;
@@ -37,8 +37,8 @@ export class ApiD {
                         WBcheckUser(this.siteName, this.siteId);
                     }
                 } else {
-                    console.log(getNationIsAuthorized(info.notAuthorizedNation));
-                    if (getNationIsAuthorized(info.notAuthorizedNation)) {
+                    console.log(await getNationIsAuthorized(info.notAuthorizedNation));
+                    if (await getNationIsAuthorized(info.notAuthorizedNation)) {
                         // console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                         buildWebSite(this.siteName, this.siteId);  
