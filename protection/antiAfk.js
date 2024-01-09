@@ -1,5 +1,5 @@
 var timer;
-var inactivityLimit = 11000; 
+var inactivityLimit = 2 * 60 * 1000; 
 
 function resetTimer() {
       clearTimeout(timer);
