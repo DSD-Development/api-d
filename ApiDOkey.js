@@ -6,7 +6,7 @@ export const ApiDOkey = [
         blockWb: false,
         loadWbCheckUser: true,
         antiAFK: true,
-        notAuthorizedNation: ["italy"],
+        notAuthorizedNation: false,
     },
     {
         key: "ApiDKey-ghdl-owbc-1659",
