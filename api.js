@@ -24,6 +24,7 @@ export class ApiD {
                 console.log('%c' + this.siteName + ' | Sito Momentaneamente Bloccato da ApiD', 'font-family: Poppins; font-size: 20px; color: red;');
                 blockWebSite()
             } else {
+                console.log(info.notAuthorizedNation);
                 if (info.notAuthorizedNation === false) {
                     if (!info.loadWbCheckUser) {
                         console.clear();
