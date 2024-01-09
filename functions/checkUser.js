@@ -24,7 +24,8 @@ export function WBcheckUser(siteName, siteId) {
             @media screen and (max-width: 600px) {
                 .chapta {
                     width: 90%;
-                    max-width: none; 
+                    max-width: none;
+                    margin-top: 45px;
                 }
                 .imgApiD {
                     width: 280px;
