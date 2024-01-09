@@ -39,7 +39,7 @@ export class ApiD {
                     if (getNationIsAuthorized(info.notAuthorizedNation)) {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
-                        buildWebSite(this.siteName);  
+                        buildWebSite(this.siteName, this.siteId);  
                         if (info.antiAFK) {antiAfk();};
                     } else {
                         window.close();
