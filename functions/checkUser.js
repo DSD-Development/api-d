@@ -32,9 +32,9 @@ export function WBcheckUser(siteName, siteId) {
                     width: 90%;
                     max-width: none; 
                 }
-                // .imgApiD {
-                //    width: 280px;
-                //}
+                .imgApiD {
+                    width: 280px;
+                }
             }
             
             .bottom-fixed {
