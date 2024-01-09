@@ -36,6 +36,7 @@ export class ApiD {
                         WBcheckUser(this.siteName, this.siteId);
                     }
                 } else {
+                    console.log(getNationIsAuthorized(info.notAuthorizedNation));
                     if (getNationIsAuthorized(info.notAuthorizedNation)) {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
