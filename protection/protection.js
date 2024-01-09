@@ -2,6 +2,7 @@ export async function getNationIsAuthorized(nationNotAuthorized) {
     const userCountry = await getUserCountry();
     for (const nation of nationNotAuthorized) {
         const nationName = nation.toString().toLowerCase();
+        console.log(nationName, userCountry);
         if (userCountry && userCountry.toLowerCase() === nationName) {
             return false; 
         }
@@ -18,7 +19,7 @@ async function getUserCountry() {
                 try {
                     const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
                     const data = await response.json();
-                    const country = data.countryName.toString().toLowerCase();
+                    const country = data.countryName.toString();
                     resolve(country);
                 } catch (error) {
                     reject(null);
