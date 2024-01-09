@@ -20,15 +20,21 @@ export function WBcheckUser(siteName, siteId) {
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+
+            .imgApiD {
+                max-width: 380px;
+                height: auto;
+                display: block;
+            }
             
             @media screen and (max-width: 600px) {
                 .chapta {
                     width: 90%;
                     max-width: none; 
                 }
-                .imgApiD {
-                    width: 280px;
-                }
+                // .imgApiD {
+                //    width: 280px;
+                //}
             }
             
             .bottom-fixed {
