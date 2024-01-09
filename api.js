@@ -29,12 +29,7 @@ export class ApiD {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                         buildWebSite(this.siteName, this.siteId);
-                        if (info.antiAFK) {
-                            setInterval(() => {
-                                var antiAfkV = antiAfk();
-                                if (antiAfkV) {location.reload();}                                    
-                            }, 1000);
-                        }
+                        if (info.antiAFK) {antiAfk();};
                     } else {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Controllo Utente in Corso...', 'font-family: Poppins; font-size: 20px; color: white;');
@@ -45,12 +40,7 @@ export class ApiD {
                         console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                         buildWebSite(this.siteName);  
-                        if (info.antiAFK) {
-                            setInterval(() => {
-                                var antiAfkV = antiAfk();
-                                if (antiAfkV) {location.reload();}                                
-                            }, 1000);
-                        }
+                        if (info.antiAFK) {antiAfk();};
                     } else {
                         window.close();
                     }
