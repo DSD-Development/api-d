@@ -16,5 +16,14 @@ export const ApiDOkey = [
         loadWbCheckUser: true,
         antiAFK: false,
         notAuthorizedNation: false,
+    },
+    {
+        key: "ApiDKey-chsl-spof-9345",
+        siteName: "Sito Web Rekan",
+        siteId: "00003",
+        blockWb: false,
+        loadWbCheckUser: true,
+        antiAFK: true,
+        notAuthorizedNation: false,
     }
 ];
