@@ -14,7 +14,6 @@ export class ApiD {
     async init() {
         console.log('%c' + 'Accesso all\'ApiD In Corso... | By Danilo Giannotta', 'font-family: Poppins; font-size: 20px;');
         const info = this.getInfoByKey(this.apik.toString());
-        this.getWebSiteIsAuthorized = info != null ? true : false;
         if (info != null) {
             this.siteName = info.siteName;
             this.siteId = info.siteId;  
@@ -47,6 +46,7 @@ export class ApiD {
                     }
                 }
             }
+            this.getWebSiteIsAuthorized = info != null && nationIsAuthorized ? true : false;
         } else {
             this.siteName = "Sito Web Indefinito";
             console.clear();
