@@ -9,7 +9,7 @@ export async function getNationIsAuthorized(nationNotAuthorized) {
     return true; 
 }
 
-async function getCountryName() {
+async function getUserCountry() {
     try {
         const response = await fetch('https://api.bigdatacloud.net/data/client-ip');
         const data = await response.json();
