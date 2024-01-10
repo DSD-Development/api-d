@@ -2,8 +2,8 @@ export async function getNationIsAuthorized(nationNotAuthorized) {
     const userCountry = await getUserCountry();
     for (const nation of nationNotAuthorized) {
         const nationName = nation.toString().toLowerCase();
-        console.log(userCountry.toLowerCase(), nationName);
-        if (userCountry && userCountry.toLowerCase() === nationName) {
+        console.log(userCountry.toString().toLowerCase(), nationName);
+        if (userCountry && userCountry.toString().toLowerCase() === nationName) {
             return false; 
         }
     }
