@@ -36,8 +36,9 @@ export class ApiD {
                     }
                 } else {
                     var nationIsAuthorized = await getNationIsAuthorized(info.notAuthorizedNation);
+                    console.log(nationIsAuthorized);
                     if (nationIsAuthorized) {
-                        console.clear();
+                        // console.clear();
                         console.log('%c' + this.siteName + ' | Accesso all\'ApiD Eseguito con Successo', 'font-family: Poppins; font-size: 20px; color: green;');
                         buildWebSite(this.siteName, this.siteId);  
                         if (info.antiAFK) {antiAfk();};
