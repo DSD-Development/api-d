@@ -11,9 +11,11 @@ export async function getNationIsAuthorized(nationNotAuthorized) {
 
 async function getCountryName() {
     try {
-        const response = await fetch('https://ipinfo.io/json');
+        const response = await fetch('https://api.bigdatacloud.net/data/client-ip');
         const data = await response.json();
-        const country = data.country;
-        return country;
-    } catch (error) {}
+        const countryName = data.countryName;
+        return countryName;
+    } catch (error) {
+        return null;
+    }
 }
