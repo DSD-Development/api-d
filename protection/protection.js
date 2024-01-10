@@ -9,23 +9,11 @@ export async function getNationIsAuthorized(nationNotAuthorized) {
     return true; 
 }
 
-async function getUserCountry() {
-    return new Promise((resolve, reject) => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(async function(position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                try {
-                    const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
-                    const data = await response.json();
-                    const country = data.countryName.toString();
-                    resolve(country);
-                } catch (error) {
-                    reject(null);
-                }
-            });
-        } else {
-            reject(null);
-        }
-    });
+async function getCountryName() {
+    try {
+        const response = await fetch('https://ipinfo.io/json');
+        const data = await response.json();
+        const country = data.country;
+        return country;
+    } catch (error) {}
 }
