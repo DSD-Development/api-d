@@ -19,10 +19,10 @@ export const ApiDOkey = [
     },
     {
         key: "ApiDKey-chsl-spof-9345",
-        siteName: "Sito Web Rekan",
+        siteName: "www.helixdevelopment.it",
         siteId: "00003",
         blockWb: false,
-        loadWbCheckUser: true,
+        loadWbCheckUser: false,
         antiAFK: true,
         notAuthorizedNation: false,
     }
