@@ -57,9 +57,3 @@ btnEmailSend.addEventListener("click", function () {
 
 adjustStylesForMobile(window.matchMedia('(max-width: 767px)').matches);
 window.addEventListener('resize', function () { adjustStylesForMobile(window.matchMedia('(max-width: 767px)').matches); });
-document.oncontextmenu = function () { return false; };
-document.onkeydown = function(event) {
-    if (event.keyCode == 123 || (event.ctrlKey && event.shiftKey && (event.keyCode == 'I'.charCodeAt(0) || event.keyCode == 'C'.charCodeAt(0) || event.keyCode == 'J'.charCodeAt(0))) || (event.ctrlKey && event.keyCode == 'U'.charCodeAt(0))) {
-        return false;
-    }
-};
